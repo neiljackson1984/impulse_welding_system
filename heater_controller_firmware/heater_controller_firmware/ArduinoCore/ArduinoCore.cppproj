@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>4ead62fb-49b7-43c4-af29-ea8a266d304c</ProjectGuid>
+    <avrdevice>atmega328p</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\Program Files (x86)\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10608</Value>
+      <Value>ARDUINO_AVR_NANO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\Average</Value>
+      <Value>..\include\libraries\PID_v1</Value>
+      <Value>..\include\libraries\SerialCommand</Value>
+      <Value>..\include\libraries\Streaming</Value>
+      <Value>..\include\libraries\U8glib</Value>
+      <Value>..\include\libraries\U8glib\utility</Value>
+      <Value>..\include\libraries\u8glib</Value>
+      <Value>..\include\libraries\u8glib\utility</Value>
+      <Value>..\include\libraries\streaming</Value>
+      <Value>..\include\libraries\pid_v1</Value>
+      <Value>..\include\libraries\average</Value>
+      <Value>..\include\libraries\serialcommand</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10608</Value>
+      <Value>ARDUINO_AVR_NANO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\Average</Value>
+      <Value>..\include\libraries\PID_v1</Value>
+      <Value>..\include\libraries\SerialCommand</Value>
+      <Value>..\include\libraries\Streaming</Value>
+      <Value>..\include\libraries\U8glib</Value>
+      <Value>..\include\libraries\U8glib\utility</Value>
+      <Value>..\include\libraries\u8glib</Value>
+      <Value>..\include\libraries\u8glib\utility</Value>
+      <Value>..\include\libraries\streaming</Value>
+      <Value>..\include\libraries\pid_v1</Value>
+      <Value>..\include\libraries\average</Value>
+      <Value>..\include\libraries\serialcommand</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10608</Value>
+      <Value>ARDUINO_AVR_NANO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\Average</Value>
+      <Value>..\include\libraries\PID_v1</Value>
+      <Value>..\include\libraries\SerialCommand</Value>
+      <Value>..\include\libraries\Streaming</Value>
+      <Value>..\include\libraries\U8glib</Value>
+      <Value>..\include\libraries\U8glib\utility</Value>
+      <Value>..\include\libraries\u8glib</Value>
+      <Value>..\include\libraries\u8glib\utility</Value>
+      <Value>..\include\libraries\streaming</Value>
+      <Value>..\include\libraries\pid_v1</Value>
+      <Value>..\include\libraries\average</Value>
+      <Value>..\include\libraries\serialcommand</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>ARDUINO=10608</Value>
+      <Value>ARDUINO_AVR_NANO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+      <Value>..\include</Value>
+      <Value>..\include\libraries\Average</Value>
+      <Value>..\include\libraries\PID_v1</Value>
+      <Value>..\include\libraries\SerialCommand</Value>
+      <Value>..\include\libraries\Streaming</Value>
+      <Value>..\include\libraries\U8glib</Value>
+      <Value>..\include\libraries\U8glib\utility</Value>
+      <Value>..\include\libraries\u8glib</Value>
+      <Value>..\include\libraries\u8glib\utility</Value>
+      <Value>..\include\libraries\streaming</Value>
+      <Value>..\include\libraries\pid_v1</Value>
+      <Value>..\include\libraries\average</Value>
+      <Value>..\include\libraries\serialcommand</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.132\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\new.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\debugger.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Average\Average.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\PID_v1\PID_v1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SerialCommand\SerialCommand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Streaming\Streaming.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\U8glib\U8glib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\U8glib\utility\u8g.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\eightanaloginputs\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\wiring_pulse.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\pid_v1\PID_v1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\serialcommand\SerialCommand.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\U8glib.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\chessengine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_bitmap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_circle.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_clip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_api.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_api_16gr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_attiny85_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_common.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_fast_parallel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_hw_usart_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_no_en_parallel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_parallel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_port_d_wr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_ssd_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_st7920_custom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_st7920_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_st7920_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_std_sw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_sw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_t6963.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_arduino_uc_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_atmega_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_atmega_parallel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_atmega_st7920_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_atmega_st7920_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_atmega_sw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_io.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_null.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_raspberrypi_hw_spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_com_raspberrypi_ssd_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_cursor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_a2_micro_printer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_flipdisc_2x7.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_gprof.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ht1632.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ili9325d_320x240.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ks0108_128x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_lc7981_160x80.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_lc7981_240x128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_lc7981_240x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_lc7981_320x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ld7032_60x32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_null.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_pcd8544_84x48.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_pcf8812_96x65.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_sbn1661_122x32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1306_128x32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1306_128x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1309_128x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1322_nhd31oled_bw.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1322_nhd31oled_gr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1325_nhd27oled_bw.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1325_nhd27oled_bw_new.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1325_nhd27oled_gr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1325_nhd27oled_gr_new.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1327_96x96_gr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_ssd1351_128x128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_64128n.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_dogm128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_dogm132.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_lm6059.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_lm6063.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_nhd_c12832.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7565_nhd_c12864.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7687_c144mvgd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7920_128x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7920_192x32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_st7920_202x32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_t6963_128x128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_t6963_128x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_t6963_240x128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_t6963_240x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_tls8204_84x48.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1601_c128032.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1608_240x128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1608_240x64.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1610_dogxl160.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1611_dogm240.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1611_dogxl240.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1701_dogs102.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_dev_uc1701_mini12864.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_ellipse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_font.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_font_data.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_line.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_ll_api.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_page.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb14v1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb16h1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb16h2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb16v1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb16v2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb32h1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8h1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8h1f.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8h2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8h8.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8v1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pb8v2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pbxh16.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_pbxh24.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_polygon.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_rect.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_rot.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_scale.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_state.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_u16toa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_u8toa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\u8glib\utility\u8g_virtual_screen.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\Average\" />
+    <Folder Include="include\libraries\PID_v1\" />
+    <Folder Include="include\libraries\SerialCommand\" />
+    <Folder Include="include\libraries\Streaming\" />
+    <Folder Include="include\libraries\U8glib\" />
+    <Folder Include="include\libraries\U8glib\utility\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="include\variants\eightanaloginputs\" />
+    <Folder Include="include\variants\standard\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\pid_v1\" />
+    <Folder Include="src\libraries\serialcommand\" />
+    <Folder Include="src\libraries\u8glib\" />
+    <Folder Include="src\libraries\u8glib\utility\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
