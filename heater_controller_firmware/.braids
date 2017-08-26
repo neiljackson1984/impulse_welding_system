@@ -1,0 +1,9 @@
+{
+  "heater_controller_firmware/braids/Button": {
+    "url": "https://github.com/t3db0t/Button",
+    "remote": "master/braid/heater_controller_firmware/braids/Button",
+    "branch": "master",
+    "squashed": true,
+    "revision": "ef8a321d4c104e8fcb0a14ff51f35d95a1d0bf5f"
+  }
+}
