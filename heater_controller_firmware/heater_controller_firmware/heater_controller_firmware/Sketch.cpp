@@ -7,11 +7,13 @@
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_DEV_0|U8G_I2C_OPT_NO_ACK|U8G_I2C_OPT_FAST);	// Fast I2C / TWI 
 #include <Streaming.h>
 #include <PID_v1.h>
-#include <Average.h>
 #include <SerialCommand.h>
 #include <avr/eeprom.h>
 #include <string.h>
-#include "debugger.h"
+#include <debugger.h>
+#include <Button.h>
+#include "SmoothedAnalogInput.h"
+
 //Beginning of Auto generated function prototypes by Atmel Studio
 float getSmoothedADCReading(int pinNumber);
 boolean isDigit(char x);
@@ -24,29 +26,78 @@ const int heater_pin=3; //driving this pin high turns on the heating element
 const int throttle_pin=A0;
 const int pulseDuration_pin=A1;
 
-float throttleReading;
-float pulseDurationReading;
+//float throttleReading;
+//float pulseDurationReading;
+
+SmoothedAnalogInput throttleReading = 
+	SmoothedAnalogInput(
+		throttle_pin,	//pinNumber
+		15				//bufferSize
+	);
+
+SmoothedAnalogInput pulseDurationReading =
+	SmoothedAnalogInput(
+		pulseDuration_pin,	//pinNumber
+		15 				//bufferSize
+	);
 
 
 
-const int numDisplayLines=6;
-const int displayLineLength=30;
-char displayLines[numDisplayLines][displayLineLength];
+const int numDisplayLines=8;
+//const int displayLineLength=31;
+//char displayLines[numDisplayLines][displayLineLength];
+String displayLines[numDisplayLines];
 
 
 
 unsigned long currentTime=0;              //time in milliseconds //to be set at the beginning of each loop.
 void refreshDisplay();
 
-#define factoryDefaultAddress '1'
-#define factoryDefaultName "un-named"
+const int doImpulse_button_pin = 2;
 
+Button doImpulse_button = 
+	Button(
+		doImpulse_button_pin,							// buttonPin
+		BUTTON_PULLUP_INTERNAL,		// buttonMode
+		true,						// debounceMode
+		20							// debounceDuration
+	);
+
+
+void doImpulse();
+
+void doImpulse_onPress(Button& b)
+{
+	doImpulse();
+}
+
+volatile unsigned long pulseCounter;
+volatile unsigned long lastPulseTime;
+
+
+void doImpulse()
+{
+
+	lastPulseTime = millis();
+	pulseCounter++;
+}
+
+void doImpulse_button_ISR()
+{
+	doImpulse_button.process();
+}
 
 void setup()
 {
   Serial.begin(115200);
+  throttleReading.init();
+  pulseDurationReading.init();
 
   pinMode(heater_pin,OUTPUT);
+  doImpulse_button.pressHandler(doImpulse_onPress);
+
+  	
+  attachInterrupt(digitalPinToInterrupt(doImpulse_button.pin), doImpulse_button_ISR, CHANGE);
 
   u8g.begin();
   //u8g.setRot180();
@@ -54,18 +105,49 @@ void setup()
 
 void loop()
 {
+	static unsigned long lastMillis, currentMillis, deltaMillis;
+	static unsigned long lastMicros, currentMicros, deltaMicros;
+	
+	currentMillis = millis();
+	currentMicros = micros();
+
+	deltaMillis = currentMillis - lastMillis;
+	deltaMicros = currentMicros - lastMicros;
 	currentTime=millis();
 	Debugger.update();
 
-	throttleReading = getSmoothedADCReading(throttle_pin);
-	pulseDurationReading = getSmoothedADCReading(pulseDuration_pin);
+    
+	displayLines[0] = String("currentMillis: ") + currentMillis;
+	displayLines[1] = String("currentMicros: ") + currentMicros;
+	displayLines[2] = String("deltaMillis: ") + deltaMillis;
+	displayLines[3] = String("deltaMicros: ") + deltaMicros;
+	displayLines[4] = String("throttleReading: ") + throttleReading.rolling();
+	displayLines[5] = String("pulseDurationReading: ") + pulseDurationReading.rolling();
+	displayLines[6] = String("pulseCounter: ") + pulseCounter;
+	displayLines[7] = String("lastPulseTime: ") + lastPulseTime;
 
-	char floatBuffer1[7];  //a little buffer to store the results of converting floating point numbers into strings
-    char floatBuffer2[7];
-    snprintf(displayLines[0],displayLineLength,"throttleReading: %s",dtostrf(throttleReading,6,1,floatBuffer1));
-    snprintf(displayLines[1],displayLineLength,"pulseDurationReading: %s",dtostrf(pulseDurationReading,6,1,floatBuffer1));
-	
+
+
+
+
+	//String myString;
+	//myString = String(currentMillis);
+	//myString.toCharArray(displayLines[0],displayLineLength-1);
+    //snprintf(displayLines[0],displayLineLength,"%s", myString.c_str());
+    //snprintf(displayLines[0],displayLineLength - 1,"currentMillis: %s", String(currentMillis).c_str());
+	//snprintf(displayLines[1],displayLineLength - 1,"currentMicros: %s", String(currentMicros).c_str());
+	//snprintf(displayLines[2],displayLineLength - 1,"deltaMillis: %s", String(deltaMillis).c_str());
+	//snprintf(displayLines[3],displayLineLength - 1,"deltaMicros: %s", String(deltaMicros).c_str());
+	//ultoa(deltaMicros,displayLines[3],10);
+	//snprintf(displayLines[4],displayLineLength,"throttleReading: %s",dtostrf(throttleReading.rolling(),6,1,floatBuffer1));
+	//snprintf(displayLines[5],displayLineLength,"pulseDurationReading: %s",dtostrf(pulseDurationReading.rolling(),6,1,floatBuffer1));
+
+
 	refreshDisplay();
+	//doImpulse_button.process();
+
+	lastMillis = currentMillis;
+	lastMicros = currentMicros;
 }
 
 
@@ -91,16 +173,6 @@ void refreshDisplay()
   } while( u8g.nextPage() );
 }
 
-float getSmoothedADCReading(int pinNumber)
-{
-	  const static int numSamples=100;
-	  Average<float> dataSet(numSamples); //'might save run time by declaring this as static (I'm not sure how much the constructor does)
-	  for(int i=0;i<numSamples;i++)
-	  {
-		dataSet.push(analogRead(pinNumber));
-	  }
-	  return dataSet.mean();
-}
 
 boolean isDigit(char x)
 {

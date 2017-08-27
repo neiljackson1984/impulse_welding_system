@@ -115,6 +115,7 @@
             <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\U8glib\utility</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\eightanaloginputs</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\standard</Value>
+            <Value>%24(ProjectDir)\..\..\braids\Button</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -149,6 +150,7 @@
             <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\U8glib\utility</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\eightanaloginputs</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\standard</Value>
+            <Value>%24(ProjectDir)\..\..\braids\Button</Value>
           </ListValues>
         </avrgcccpp.compiler.directories.IncludePaths>
         <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -207,6 +209,7 @@
             <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\U8glib\utility</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\eightanaloginputs</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\standard</Value>
+            <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\Button</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -241,6 +244,7 @@
             <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\U8glib\utility</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\eightanaloginputs</Value>
             <Value>%24(ProjectDir)\..\ArduinoCore\include\variants\standard</Value>
+            <Value>%24(ProjectDir)\..\ArduinoCore\include\libraries\Button</Value>
           </ListValues>
         </avrgcccpp.compiler.directories.IncludePaths>
         <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -268,6 +272,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Sketch.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SmoothedAnalogInput.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SmoothedAnalogInput.h">
       <SubType>compile</SubType>
     </Compile>
     <Content Include="readme.html">

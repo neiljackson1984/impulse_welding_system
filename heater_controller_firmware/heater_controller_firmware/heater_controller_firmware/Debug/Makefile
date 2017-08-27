@@ -37,7 +37,8 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../Sketch.cpp
+../Sketch.cpp \
+../SmoothedAnalogInput.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -47,16 +48,20 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-Sketch.o
+Sketch.o \
+SmoothedAnalogInput.o
 
 OBJS_AS_ARGS +=  \
-Sketch.o
+Sketch.o \
+SmoothedAnalogInput.o
 
 C_DEPS +=  \
-Sketch.d
+Sketch.d \
+SmoothedAnalogInput.d
 
 C_DEPS_AS_ARGS +=  \
-Sketch.d
+Sketch.d \
+SmoothedAnalogInput.d
 
 OUTPUT_FILE_PATH +=heater_controller_firmware.elf
 
@@ -76,10 +81,12 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
 ./%.o: .././%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\\..\ArduinoCore\include" -I"..\\..\ArduinoCore\include\core" -I"..\\..\ArduinoCore\include\libraries\Average" -I"..\\..\ArduinoCore\include\libraries\PID_v1" -I"..\\..\ArduinoCore\include\libraries\SerialCommand" -I"..\\..\ArduinoCore\include\libraries\Streaming" -I"..\\..\ArduinoCore\include\libraries\U8glib" -I"..\\..\ArduinoCore\include\libraries\U8glib\utility" -I"..\\..\ArduinoCore\include\variants\eightanaloginputs" -I"..\\..\ArduinoCore\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\\..\ArduinoCore\include" -I"..\\..\ArduinoCore\include\core" -I"..\\..\ArduinoCore\include\libraries\Average" -I"..\\..\ArduinoCore\include\libraries\PID_v1" -I"..\\..\ArduinoCore\include\libraries\SerialCommand" -I"..\\..\ArduinoCore\include\libraries\Streaming" -I"..\\..\ArduinoCore\include\libraries\U8glib" -I"..\\..\ArduinoCore\include\libraries\U8glib\utility" -I"..\\..\ArduinoCore\include\variants\eightanaloginputs" -I"..\\..\ArduinoCore\include\variants\standard" -I"..\\..\ArduinoCore\include\libraries\Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

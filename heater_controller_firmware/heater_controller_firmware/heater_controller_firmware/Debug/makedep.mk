@@ -4,3 +4,5 @@
 
 Sketch.cpp
 
+SmoothedAnalogInput.cpp
+

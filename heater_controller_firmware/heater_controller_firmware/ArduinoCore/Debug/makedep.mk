@@ -52,6 +52,8 @@ src\core\WMath.cpp
 
 src\core\WString.cpp
 
+src\libraries\Button\Button.cpp
+
 src\libraries\pid_v1\PID_v1.cpp
 
 src\libraries\serialcommand\SerialCommand.cpp

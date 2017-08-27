@@ -37,6 +37,7 @@ SUBDIRS :=  \
 ../include/core/ \
 ../include/libraries/ \
 ../include/libraries/Average/ \
+../include/libraries/Button \
 ../include/libraries/PID_v1/ \
 ../include/libraries/SerialCommand/ \
 ../include/libraries/Streaming/ \
@@ -49,6 +50,7 @@ SUBDIRS :=  \
 ../src/core/ \
 ../src/core/PreprocessingAssembly/ \
 ../src/libraries/ \
+../src/libraries/Button \
 ../src/libraries/pid_v1/ \
 ../src/libraries/serialcommand/ \
 ../src/libraries/u8glib/ \
@@ -81,6 +83,7 @@ C_SRCS +=  \
 ../src/core/wiring_shift.c \
 ../src/core/WMath.cpp \
 ../src/core/WString.cpp \
+../src/libraries/Button/Button.cpp \
 ../src/libraries/pid_v1/PID_v1.cpp \
 ../src/libraries/serialcommand/SerialCommand.cpp \
 ../src/libraries/u8glib/U8glib.cpp \
@@ -232,6 +235,7 @@ src/core/wiring_pulse.o \
 src/core/wiring_shift.o \
 src/core/WMath.o \
 src/core/WString.o \
+src/libraries/Button/Button.o \
 src/libraries/pid_v1/PID_v1.o \
 src/libraries/serialcommand/SerialCommand.o \
 src/libraries/u8glib/U8glib.o \
@@ -375,6 +379,7 @@ src/core/wiring_pulse.o \
 src/core/wiring_shift.o \
 src/core/WMath.o \
 src/core/WString.o \
+src/libraries/Button/Button.o \
 src/libraries/pid_v1/PID_v1.o \
 src/libraries/serialcommand/SerialCommand.o \
 src/libraries/u8glib/U8glib.o \
@@ -518,6 +523,7 @@ src/core/wiring_pulse.d \
 src/core/wiring_shift.d \
 src/core/WMath.d \
 src/core/WString.d \
+src/libraries/Button/Button.d \
 src/libraries/pid_v1/PID_v1.d \
 src/libraries/serialcommand/SerialCommand.d \
 src/libraries/u8glib/U8glib.d \
@@ -661,6 +667,7 @@ src/core/wiring_pulse.d \
 src/core/wiring_shift.d \
 src/core/WMath.d \
 src/core/WString.d \
+src/libraries/Button/Button.d \
 src/libraries/pid_v1/PID_v1.d \
 src/libraries/serialcommand/SerialCommand.d \
 src/libraries/u8glib/U8glib.d \
@@ -1073,45 +1080,54 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
 src/core/%.o: ../src/core/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu99 -std=gnu11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu99 -std=gnu11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/core/%.o: ../src/core/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/libraries/Button/%.o: ../src/libraries/Button/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/libraries/pid_v1/%.o: ../src/libraries/pid_v1/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/libraries/serialcommand/%.o: ../src/libraries/serialcommand/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/libraries/u8glib/%.o: ../src/libraries/u8glib/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/libraries/u8glib/utility/%.o: ../src/libraries/u8glib/utility/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu99 -std=gnu11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=10608 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\include" -I"..\include" -I"..\include\libraries\Average" -I"..\include\libraries\PID_v1" -I"..\include\libraries\SerialCommand" -I"..\include\libraries\Streaming" -I"..\include\libraries\U8glib" -I"..\include\libraries\U8glib\utility" -I"..\include\libraries\u8glib" -I"..\include\libraries\u8glib\utility" -I"..\include\libraries\streaming" -I"..\include\libraries\pid_v1" -I"..\include\libraries\average" -I"..\include\libraries\serialcommand" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard" -I"../include/libraries/Button"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\gcc\dev\atmega328p" -c -std=gnu99 -std=gnu11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
