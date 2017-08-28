@@ -43,6 +43,7 @@ Sketch.d Sketch.o: .././Sketch.cpp \
  ..\\..\ArduinoCore\include\libraries\SerialCommand/SerialCommand.h \
  ..\\..\ArduinoCore\include/debugger.h \
  ..\\..\ArduinoCore\include\libraries\Button/Button.h \
+ ..\\..\ArduinoCore\include\core/wiring_private.h \
  .././SmoothedAnalogInput.h \
  ..\\..\ArduinoCore\include\libraries\Average/Average.h
 
@@ -133,6 +134,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ..\\..\ArduinoCore\include/debugger.h:
 
 ..\\..\ArduinoCore\include\libraries\Button/Button.h:
+
+..\\..\ArduinoCore\include\core/wiring_private.h:
 
 .././SmoothedAnalogInput.h:
 

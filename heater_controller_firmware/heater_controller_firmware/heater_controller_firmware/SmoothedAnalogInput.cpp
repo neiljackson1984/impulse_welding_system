@@ -14,7 +14,7 @@ void SmoothedAnalogInput::init()
 	pinMode(pinNumber, INPUT);
 	for(int i=0;i<bufferSize;i++)
 	{
-		process();
+		update();
 	}
 }
 
@@ -23,13 +23,25 @@ float SmoothedAnalogInput::value()
 	return dataSet.mean();
 }
 
-void SmoothedAnalogInput::process()
+void SmoothedAnalogInput::update(int numTimes)
 {
-	dataSet.push(analogRead(pinNumber));
+	for(int i = 0; i<numTimes; i++ )
+	{
+		dataSet.push(analogRead(pinNumber));
+	}
+}
+void SmoothedAnalogInput::update()
+{
+	update(1);
+}
+
+float SmoothedAnalogInput::rolling(int numTimes)
+{
+	update(numTimes);
+	return value();
 }
 
 float SmoothedAnalogInput::rolling()
 {
-	process();
-	return value();
+	return rolling(1);
 }
