@@ -1,0 +1,63 @@
+{
+    "weGeneratedAJsonFile": false,
+    "millimeter": 1,
+    "inch": 25.4,
+    "degree": 1,
+    "radian": 57.295779513082,
+    "mainBar": {
+        "extentX": 30,
+        "extentY": 70,
+        "extentZ": 180,
+        "trough": {
+            "extentX": 10.51457069612,
+            "extentY": 10.51457069612
+        }
+    },
+    "screw": {
+        "clearanceDiameter": 5.1,
+        "length": 100
+    },
+    "pushCrown": {
+        "post": {
+            "diameter": 1.3
+        },
+        "posts": {
+            "pattern": {
+                "radius": 5.95
+            }
+        },
+        "extentX": 10.31457069612,
+        "extentY": 10.31457069612,
+        "extentZ": 40,
+        "base": {
+            "extentZ": 5
+        },
+        "boreDiameter": 5.1
+    },
+    "cap": {
+        "extentX": 30,
+        "extentY": 70,
+        "extentZ": 3,
+        "bore": {
+            "diameter": 5.1
+        },
+        "postClearanceHole": {
+            "diameter": 1.4
+        }
+    },
+    "bearingShaft": {
+        "outerDiameter": 10,
+        "extentZ": 30,
+        "bore": {
+            "diameter": 5.1
+        }
+    },
+    "impulseBar": {
+        "screwAxis": {
+            "insetY": 5.25728534806
+        }
+    },
+    "spring": {
+        "extentZ": 10
+    }
+}
