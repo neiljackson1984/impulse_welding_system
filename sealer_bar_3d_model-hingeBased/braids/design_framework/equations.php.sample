@@ -1,0 +1,59 @@
+<?php
+
+setParameterSetId("<put a guid here>");
+
+
+$mm = 1;
+$inch = 25.4 * $mm;
+
+$degree = 1;
+$radian = 180/pi();
+
+
+
+//============  LINEAR BEARING SYSTEMS ==============================
+
+//the carriage (the thing that rides along the way), has a wayTargetX_plane and a wayTargetY_plane.  wayTargetX_plane is normal to the way's X axis (when the carrage is properly engaged on the way), likewise for wayTargetY_plane.
+// these planes will coincide with the way's wayX_plane and wayY_plane, respectively, when the carriage is properly engaged.  (What matters is that the carriage and ways are defined with the SAME concept of these x and y planes, not the concept itself.)
+
+//the way's mountingSurfaceOffset is the distance between the way's wayY_plane and the surface where the way is mounted to the rest of the assembly.
+
+//likewise, a carriage has a mountingSurfaceOffset, which is the distance between the carriage's wayYTarget_plane and the surface where the carriage mounts to whatever it is carrying.  The carriage mounting surface is assumed to be the wayYMax surface of the carriage (we are assuming carriages witha roughly rectangular cross-section). 
+
+
+//these numbers are arbitrary
+$linearBearingTypesEnum->kent4 = 5;
+$linearBearingTypesEnum->kent6 = 6;
+$linearBearingTypesEnum->pbc = 11;
+$linearBearingTypesEnum->thkHsr20 = 12;
+$linearBearingTypesEnum->thkShs25 = 13;
+
+
+$kent4Way->linearBearingType = $linearBearingTypesEnum->kent4;
+$kent4Way->extentX = 4*$inch ; //The 'X' here refers to the x'direction in the way frame.  By convention, the Z axis of a way is the direction of travel of the carriage.  The X direction is aligned along the longer side of the rectangular cross section, and the Y direction is aligned along the shorter side of the rectangular cross section (assuming the way has a roughly rectangular cross-setion with one side longer than the other).  The y axis is directed from the mounting surface towards the way.
+$kent4Way->extentY = 0.25 * $inch ;
+$kent4Way->mountingSurfaceOffset = $kent4Way->extentY/2;
+
+$kent4Carriage->linearBearingType = $linearBearingTypesEnum->kent4;
+$kent4Carriage->mountingSurfaceOffset = 28.78963 * $mm; 
+$kent4Carriage->extentZ = 6 * $inch; //this is the extentZ of the 'withPlate' configuration of kentStyleCarriage.
+$kent4Carriage->targetWayExtentX = $kent4Way->extentX;
+$kent4Carriage->extentX = 5 * $inch; //fix me
+
+$kent6Way = clone $kent4Way;
+$kent6Way->linearBearingType = $linearBearingTypesEnum->kent6;
+$kent6Way->extentX = 6 * $inch;
+
+$kent6Carriage = clone $kent4Carriage;
+$kent6Carriage->linearBearingType = $linearBearingTypesEnum->kent6;
+$kent6Carriage->extentZ = 4.5 * $inch;
+$kent6Carriage->targetWayExtentX = $kent6Way->extentX;
+//$kent6Carriage->extentX = 7 * $inch; //fix me
+$kent6Carriage->extentX = 5 * $inch; //fix me
+
+$pbcCarriage->linearBearingType = $linearBearingTypesEnum->pbc;
+$pbcCarriage->mountingSurfaceOffset = 32.71599996179999 * $mm; 
+$pbcCarriage->extentZ = 225 * $mm; 
+
+
+?>

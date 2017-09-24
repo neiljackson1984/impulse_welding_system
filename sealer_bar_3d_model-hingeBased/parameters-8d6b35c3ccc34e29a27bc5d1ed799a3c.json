@@ -1,0 +1,34 @@
+{
+    "weGeneratedAJsonFile": false,
+    "millimeter": 1,
+    "inch": 25.4,
+    "degree": 1,
+    "radian": 57.295779513082,
+    "heaterBed": {
+        "extentX": 30,
+        "extentZ": 80
+    },
+    "mainBar": {
+        "extentX": 30,
+        "extentZ": 180,
+        "extentY": 70,
+        "foot": {
+            "extentY": 15
+        },
+        "pivotInsetZ": 30,
+        "pivotInsetY": 7
+    },
+    "arm": {
+        "sidePlate": {
+            "extentX": 3,
+            "extentY": 65,
+            "extentZ": 10
+        },
+        "sidePlatesIntervalX": 33,
+        "endBlock": {
+            "extentX": 30,
+            "extentY": 20,
+            "extentZ": 9
+        }
+    }
+}
