@@ -21,14 +21,27 @@
     "arm": {
         "sidePlate": {
             "extentX": 3,
-            "extentY": 65,
-            "extentZ": 10
+            "extentZ": 10,
+            "pivotDedendum": 4,
+            "extentY": 67
         },
-        "sidePlatesIntervalX": 33,
         "endBlock": {
             "extentX": 30,
             "extentY": 20,
             "extentZ": 9
+        },
+        "pivotAxisRootPoint": {
+            "position": {
+                "y": 0
+            }
+        },
+        "endBlockPosition": {
+            "y": 53
         }
+    },
+    "pivotShaft": {
+        "diameter": 5,
+        "holeDiameter": 5.02,
+        "length": 46
     }
 }
