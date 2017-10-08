@@ -1,9 +1,0 @@
-{
-  "sealer_bar_3d_model/braids/design_framework": {
-    "url": "https://github.com/neiljackson1984/design_framework",
-    "remote": "master/braid/sealer_bar_3d_model/braids/design_framework",
-    "branch": "master",
-    "squashed": true,
-    "revision": "a431982bffb01a37bbff50db780872a740e37acd"
-  }
-}
