@@ -37,8 +37,8 @@
         "endBlock": {
             "extent": {
                 "x": 30,
-                "y": 20,
-                "z": 9
+                "z": 9,
+                "y": 29
             }
         },
         "pivotAxisRootPoint": {
@@ -46,16 +46,14 @@
                 "y": 0
             }
         },
-        "endBlockPosition": {
-            "y": 53
-        },
+        "endBlockYMax": 63,
         "viseScrew": {
             "pitch": 0.8,
             "tappableHoleDiameter": 4.2,
             "closeFitDiameter": 5.25,
             "freeFitDiameter": 5.5,
-            "clampingDiameter": 20.32,
-            "length": null,
+            "clampingDiameter": 10,
+            "length": 14,
             "threadEmbedmentDiameter": 6.9825,
             "threadSpec": "M5-0.8"
         },
@@ -69,10 +67,33 @@
         },
         "viseBar": {
             "extent": {
-                "x": 30.82,
-                "y": 20.32,
+                "x": 20.5,
+                "y": 10,
                 "z": 6
             }
+        },
+        "viseBarYMax": 58,
+        "viseBarYMin": 48,
+        "viseBarPosition": {
+            "y": 53
+        },
+        "terminalScrew": {
+            "pitch": 0.8,
+            "tappableHoleDiameter": 4.2,
+            "closeFitDiameter": 5.25,
+            "freeFitDiameter": 5.5,
+            "clampingDiameter": 20.32,
+            "length": 10,
+            "threadEmbedmentDiameter": 6.9825,
+            "threadSpec": "M5-0.8"
+        },
+        "terminalClampingDiameter": 14,
+        "terminalScrewPosition": {
+            "y": 41
+        },
+        "endBlockYMin": 34,
+        "endBlockPosition": {
+            "y": 48.5
         }
     },
     "pivotShaft": {
