@@ -2,33 +2,44 @@
     "weGeneratedAJsonFile": false,
     "millimeter": 1,
     "inch": 25.4,
+    "mm": 1,
     "degree": 1,
     "radian": 57.295779513082,
     "heaterBed": {
-        "extentX": 30,
-        "extentZ": 80
+        "extent": {
+            "x": 30,
+            "z": 80
+        }
     },
     "mainBar": {
-        "extentX": 30,
-        "extentZ": 180,
-        "extentY": 70,
+        "extent": {
+            "x": 30,
+            "z": 180,
+            "y": 70
+        },
         "foot": {
-            "extentY": 15
+            "extent": {
+                "y": 15
+            }
         },
         "pivotInsetZ": 30,
         "pivotInsetY": 7
     },
     "arm": {
         "sidePlate": {
-            "extentX": 3,
-            "extentZ": 10,
-            "pivotDedendum": 4,
-            "extentY": 67
+            "extent": {
+                "x": 3,
+                "z": 10,
+                "y": 67
+            },
+            "pivotDedendum": 4
         },
         "endBlock": {
-            "extentX": 30,
-            "extentY": 20,
-            "extentZ": 9
+            "extent": {
+                "x": 30,
+                "y": 20,
+                "z": 9
+            }
         },
         "pivotAxisRootPoint": {
             "position": {
@@ -37,6 +48,31 @@
         },
         "endBlockPosition": {
             "y": 53
+        },
+        "viseScrew": {
+            "pitch": 0.8,
+            "tappableHoleDiameter": 4.2,
+            "closeFitDiameter": 5.25,
+            "freeFitDiameter": 5.5,
+            "clampingDiameter": 20.32,
+            "length": null,
+            "threadEmbedmentDiameter": 6.9825,
+            "threadSpec": "M5-0.8"
+        },
+        "viseClampingZone": {
+            "extent": {
+                "x": 5
+            }
+        },
+        "viseScrews": {
+            "intervalX": 10.5
+        },
+        "viseBar": {
+            "extent": {
+                "x": 30.82,
+                "y": 20.32,
+                "z": 6
+            }
         }
     },
     "pivotShaft": {
