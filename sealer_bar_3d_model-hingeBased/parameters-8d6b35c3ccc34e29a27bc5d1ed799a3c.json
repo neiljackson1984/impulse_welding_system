@@ -94,6 +94,23 @@
         "endBlockYMin": 34,
         "endBlockPosition": {
             "y": 48.5
+        },
+        "endBlockToSidePlateBindingScrew": {
+            "pitch": 0.8,
+            "tappableHoleDiameter": 4.2,
+            "closeFitDiameter": 5.25,
+            "freeFitDiameter": 5.5,
+            "clampingDiameter": 20.32,
+            "length": null,
+            "threadEmbedmentDiameter": 6.9825,
+            "threadSpec": "M5-0.8"
+        },
+        "endBlockToSidePlateBindingScrews": {
+            "pattern": {
+                "spanY": 8.68,
+                "countY": 2,
+                "intervalY": 8.68
+            }
         }
     },
     "pivotShaft": {

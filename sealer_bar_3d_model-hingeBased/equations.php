@@ -76,4 +76,14 @@ $arm->endBlockYMin = $arm->terminalScrewPosition->y - $arm->terminalClampingDiam
 $arm->endBlockPosition->y = average([$arm->endBlockYMax, $arm->endBlockYMin]);
 
 $arm->endBlock->extent->y = $arm->endBlockYMax - $arm->endBlockYMin;
+
+$arm->endBlockToSidePlateBindingScrew = new screw("M5-0.8");
+
+$arm->endBlockToSidePlateBindingScrews->pattern->spanY = $arm->endBlock->extent->y - $arm->endBlockToSidePlateBindingScrew->clampingDiameter;
+$arm->endBlockToSidePlateBindingScrews->pattern->countY = 2;
+$arm->endBlockToSidePlateBindingScrews->pattern->intervalY = $arm->endBlockToSidePlateBindingScrews->pattern->spanY/($arm->endBlockToSidePlateBindingScrews->pattern->countY - 1) ;
+
+
+$arm->endBlockToSidePlateBindingScrew = new screw("M5-0.8");
+
 ?>
