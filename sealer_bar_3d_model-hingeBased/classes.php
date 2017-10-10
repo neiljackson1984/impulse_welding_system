@@ -73,6 +73,24 @@ class screw
 				$this->threadEmbedmentDiameter  = 1.33 * $this->closeFitDiameter;
 			break;
 			
+			case "M4-0.7":
+				$this->pitch                    = 0.7      * $mm  ;
+				$this->tappableHoleDiameter     = 3.3      * $mm  ; 
+				$this->closeFitDiameter         = 4.20     * $mm  ; 
+				$this->freeFitDiameter          = 4.40     * $mm  ; 
+				$this->clampingDiameter         = 15       * $mm ; //unverified
+				$this->threadEmbedmentDiameter  = 1.33 * $this->closeFitDiameter;
+			break;
+			
+			case "M3-0.5":
+				$this->pitch                    = 0.50     * $mm  ;
+				$this->tappableHoleDiameter     = 2.50     * $mm  ; 
+				$this->closeFitDiameter         = 3.15     * $mm  ; 
+				$this->freeFitDiameter          = 3.30     * $mm  ; 
+				$this->clampingDiameter         = 8.4      * $mm ; //unverified
+				$this->threadEmbedmentDiameter  = 1.33 * $this->closeFitDiameter;
+			break;
+			
 			
 			default:
 				trigger_error("unrecognized threadSpec ($threadSpec) was passed to screw constructor." );

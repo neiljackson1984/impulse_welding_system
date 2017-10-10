@@ -24,24 +24,38 @@ $heaterBed->extent->z = 80 * $millimeter;
 
 $mainBar->extent->x = $heaterBed->extent->x;
 $mainBar->extent->z = $heaterBed->extent->z + 100 * $millimeter;
-$mainBar->extent->y = 70 * $millimeter;
+$mainBar->extent->y = 50 * $millimeter;
 $mainBar->foot->extent->y = 15 * $millimeter;
 $mainBar->pivotInsetZ = 30 * $millimeter;
 $mainBar->pivotInsetY = 7 * $millimeter;
 
+$arm->pivotAxisRootPoint->position->x = 0;
+$arm->pivotAxisRootPoint->position->y = 0;
+$arm->pivotAxisRootPoint->position->z = 0;
 
 $arm->sidePlate->extent->x = 3 * $millimeter; //stock sheet thickness
 
-$arm->sidePlate->extent->z = 10 * $millimeter;
 $arm->sidePlate->pivotDedendum = 4 * $millimeter;
-$arm->sidePlate->extent->y = $arm->sidePlate->pivotDedendum + $mainBar->extent->y  - $mainBar->pivotInsetY;
+
+$arm->sidePlateYMin = $arm->pivotAxisRootPoint->position->y - $arm->sidePlate->pivotDedendum;
+$arm->sidePlateYMax = $mainBar->extent->y  - $mainBar->pivotInsetY;
+$arm->sidePlate->extent->y = $arm->sidePlateYMax - $arm->sidePlateYMin;
+$arm->sidePlatePosition->y = average([$arm->sidePlateYMin, $arm->sidePlateYMax]);
+
+
+$arm->endBlock->roundingRadius = 4 * $mm;
+$arm->endBlock->extent->z = 9 * $millimeter;
+$arm->endBlockZMin = $arm->pivotAxisRootPoint->position->z;
+$arm->endBlockZMax = $arm->endBlockZMin + $arm->endBlock->extent->z;
+$arm->endBlockPosition->z = average([$arm->endBlockZMin, $arm->endBlockZMax]);
+
+$arm->sidePlateZMax = $arm->endBlockZMax;
+$arm->sidePlateZMin = $arm->pivotAxisRootPoint->position->z - 5 * $mm;
+$arm->sidePlate->extent->z = $arm->sidePlateZMax - $arm->sidePlateZMin;
+$arm->sidePlatePosition->z = average([$arm->sidePlateZMax, $arm->sidePlateZMin]);
 
 
 $arm->endBlock->extent->x = $heaterBed->extent->x;
-$arm->endBlock->extent->z = 9 * $millimeter;
-
-$arm->pivotAxisRootPoint->position->y = 0;
-
 
 $pivotShaft->diameter = 5 * $millimeter;
 $pivotShaft->holeDiameter = $pivotShaft->diameter + 0.02 * $millimeter;
@@ -77,13 +91,12 @@ $arm->endBlockPosition->y = average([$arm->endBlockYMax, $arm->endBlockYMin]);
 
 $arm->endBlock->extent->y = $arm->endBlockYMax - $arm->endBlockYMin;
 
-$arm->endBlockToSidePlateBindingScrew = new screw("M5-0.8");
+$arm->endBlockToSidePlateBindingScrew = new screw("M3-0.5");
 
 $arm->endBlockToSidePlateBindingScrews->pattern->spanY = $arm->endBlock->extent->y - $arm->endBlockToSidePlateBindingScrew->clampingDiameter;
 $arm->endBlockToSidePlateBindingScrews->pattern->countY = 2;
 $arm->endBlockToSidePlateBindingScrews->pattern->intervalY = $arm->endBlockToSidePlateBindingScrews->pattern->spanY/($arm->endBlockToSidePlateBindingScrews->pattern->countY - 1) ;
 
 
-$arm->endBlockToSidePlateBindingScrew = new screw("M5-0.8");
 
 ?>

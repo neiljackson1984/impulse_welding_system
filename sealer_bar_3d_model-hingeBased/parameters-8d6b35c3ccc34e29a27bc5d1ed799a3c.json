@@ -15,7 +15,7 @@
         "extent": {
             "x": 30,
             "z": 180,
-            "y": 70
+            "y": 50
         },
         "foot": {
             "extent": {
@@ -26,27 +26,44 @@
         "pivotInsetY": 7
     },
     "arm": {
+        "pivotAxisRootPoint": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
         "sidePlate": {
             "extent": {
                 "x": 3,
-                "z": 10,
-                "y": 67
+                "y": 47,
+                "z": 14
             },
             "pivotDedendum": 4
         },
+        "sidePlateYMin": -4,
+        "sidePlateYMax": 43,
+        "sidePlatePosition": {
+            "y": 19.5,
+            "z": 2
+        },
         "endBlock": {
+            "roundingRadius": 4,
             "extent": {
-                "x": 30,
                 "z": 9,
+                "x": 30,
                 "y": 29
             }
         },
-        "pivotAxisRootPoint": {
-            "position": {
-                "y": 0
-            }
+        "endBlockZMin": 0,
+        "endBlockZMax": 9,
+        "endBlockPosition": {
+            "z": 4.5,
+            "y": 28.5
         },
-        "endBlockYMax": 63,
+        "sidePlateZMax": 9,
+        "sidePlateZMin": -5,
+        "endBlockYMax": 43,
         "viseScrew": {
             "pitch": 0.8,
             "tappableHoleDiameter": 4.2,
@@ -72,10 +89,10 @@
                 "z": 6
             }
         },
-        "viseBarYMax": 58,
-        "viseBarYMin": 48,
+        "viseBarYMax": 38,
+        "viseBarYMin": 28,
         "viseBarPosition": {
-            "y": 53
+            "y": 33
         },
         "terminalScrew": {
             "pitch": 0.8,
@@ -89,27 +106,24 @@
         },
         "terminalClampingDiameter": 14,
         "terminalScrewPosition": {
-            "y": 41
+            "y": 21
         },
-        "endBlockYMin": 34,
-        "endBlockPosition": {
-            "y": 48.5
-        },
+        "endBlockYMin": 14,
         "endBlockToSidePlateBindingScrew": {
-            "pitch": 0.8,
-            "tappableHoleDiameter": 4.2,
-            "closeFitDiameter": 5.25,
-            "freeFitDiameter": 5.5,
-            "clampingDiameter": 20.32,
+            "pitch": 0.5,
+            "tappableHoleDiameter": 2.5,
+            "closeFitDiameter": 3.15,
+            "freeFitDiameter": 3.3,
+            "clampingDiameter": 8.4,
             "length": null,
-            "threadEmbedmentDiameter": 6.9825,
-            "threadSpec": "M5-0.8"
+            "threadEmbedmentDiameter": 4.1895,
+            "threadSpec": "M3-0.5"
         },
         "endBlockToSidePlateBindingScrews": {
             "pattern": {
-                "spanY": 8.68,
+                "spanY": 20.6,
                 "countY": 2,
-                "intervalY": 8.68
+                "intervalY": 20.6
             }
         }
     },
