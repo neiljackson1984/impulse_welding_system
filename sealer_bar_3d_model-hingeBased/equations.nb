@@ -1,0 +1,757 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     26412,        748]
+NotebookOptionsPosition[     23913,        656]
+NotebookOutlinePosition[     24257,        671]
+CellTagsIndexPosition[     24214,        668]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Remove", "@@", 
+   RowBox[{"Names", "[", 
+    RowBox[{"\"\<exportableParameters`\>\"", " ", "~~", " ", 
+     RowBox[{"RepeatedNull", "[", 
+      RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Begin", "@", "\"\<exportableParameters`\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"millimeter", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inch", " ", "=", " ", 
+   RowBox[{"25.4", " ", "*", " ", "millimeter"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mm", " ", "=", " ", "millimeter"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"`pivotShaft`holeDiameter", " ", ":=", " ", 
+   RowBox[{"`pivotShaft`diameter", "+", " ", 
+    RowBox[{"0.02", " ", "*", " ", "mm"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"`pivotShaft`diameter", " ", ":=", " ", 
+    RowBox[{"5", " ", "*", " ", "mm"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"`mainBar`extent`y", " ", ":=", " ", 
+     RowBox[{"50", " ", "*", " ", "mm"}]}], ";"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"`mainBar`extent`y", " ", "==", " ", 
+    RowBox[{"`mainbarYMax", " ", "-", " ", "`mainbarYMin"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"`mainBar`pivotInsetY", " ", ":=", " ", 
+    RowBox[{"7", " ", "*", " ", "mm"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"`arm`sidePlateYMax", " ", ":=", " ", 
+    RowBox[{"`mainBar`extent`y", " ", "-", " ", "`mainBar`pivotInsetY"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#", ",", 
+       RowBox[{"Symbol", "@", "#"}], ",", 
+       RowBox[{"Definition", "@", "#"}]}], "}"}], "&"}], "/@", 
+    RowBox[{"Sort", "@", 
+     RowBox[{"Names", "[", 
+      RowBox[{"\"\<exportableParameters`\>\"", " ", "~~", " ", 
+       RowBox[{"RepeatedNull", "[", 
+        RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}], 
+      "]"}]}]}], " ", "//", "TableForm"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7176190398287888`*^9, 3.7176190512129993`*^9}, {
+   3.7176192377957783`*^9, 3.717619292749941*^9}, {3.717619345511897*^9, 
+   3.717619417594735*^9}, {3.7176194532530823`*^9, 3.7176194691245747`*^9}, {
+   3.7176195111104956`*^9, 3.717619557337825*^9}, {3.717619590962019*^9, 
+   3.717619592521126*^9}, 3.7176196250842223`*^9, {3.7176196625327015`*^9, 
+   3.7176197226406965`*^9}, {3.717619753463727*^9, 3.717619779218356*^9}, {
+   3.717619815796049*^9, 3.7176198618046017`*^9}, {3.717619926168064*^9, 
+   3.717619943583813*^9}, {3.717620099663738*^9, 3.7176201214237823`*^9}, {
+   3.717620183729597*^9, 3.7176202456354504`*^9}, {3.717620434059148*^9, 
+   3.7176204532439513`*^9}, {3.7176205139106474`*^9, 3.7176205796238346`*^9}, 
+   3.7176206120651093`*^9, {3.7176206689238186`*^9, 3.7176206823721037`*^9}, {
+   3.7176209264553375`*^9, 3.7176209551200285`*^9}, {3.7176212259954753`*^9, 
+   3.71762123114689*^9}, {3.7176212727088594`*^9, 3.717621278060364*^9}, {
+   3.7176219801462193`*^9, 3.71762203414732*^9}, 3.7176220742830935`*^9, {
+   3.717622107382204*^9, 3.7176221119265614`*^9}, {3.717622361206976*^9, 
+   3.717622363048214*^9}, {3.7176226682757177`*^9, 3.7176227250791636`*^9}, {
+   3.717622767246122*^9, 3.717622835939576*^9}, 3.7176230568833256`*^9, {
+   3.7176230977551126`*^9, 3.717623101643483*^9}, {3.7176232381073484`*^9, 
+   3.7176232588662853`*^9}, {3.717623437146029*^9, 3.7176234976791058`*^9}, {
+   3.717623557802166*^9, 3.7176235579612226`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"exportableParameters`arm`sidePlateYMax\"\>", 
+     RowBox[{
+      RowBox[{"-", "7"}], "+", "mainbarYMax", "-", "mainbarYMin"}], 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"exportableParameters`arm`sidePlateYMax", ":=", 
+             RowBox[{
+             "exportableParameters`mainBar`extent`y", "-", 
+              "exportableParameters`mainBar`pivotInsetY"}]}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["exportableParameters`arm`sidePlateYMax"],
+      Editable->False]},
+    {"\<\"exportableParameters`mainBar`extent`y\"\>", 
+     RowBox[{"mainbarYMax", "-", "mainbarYMin"}], 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"exportableParameters`mainBar`extent`y", ":=", 
+             RowBox[{"mainbarYMax", "-", "mainbarYMin"}]}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["exportableParameters`mainBar`extent`y"],
+      Editable->False]},
+    {"\<\"exportableParameters`mainBar`pivotInsetY\"\>", "7", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"exportableParameters`mainBar`pivotInsetY", ":=", 
+             RowBox[{"7", " ", "mm"}]}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["exportableParameters`mainBar`pivotInsetY"],
+      Editable->False]},
+    {"\<\"exportableParameters`pivotShaft`diameter\"\>", "5", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"exportableParameters`pivotShaft`diameter", ":=", 
+             RowBox[{"5", " ", "mm"}]}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["exportableParameters`pivotShaft`diameter"],
+      Editable->False]},
+    {"\<\"exportableParameters`pivotShaft`holeDiameter\"\>", "5.02`", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"exportableParameters`pivotShaft`holeDiameter", ":=", 
+             RowBox[{"exportableParameters`pivotShaft`diameter", "+", 
+              RowBox[{"0.02`", " ", "mm"}]}]}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["exportableParameters`pivotShaft`holeDiameter"],
+      Editable->False]},
+    {"\<\"inch\"\>", "25.4`", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"inch", "=", "25.4`"}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["inch"],
+      Editable->False]},
+    {"\<\"mainbarYMax\"\>", "mainbarYMax", 
+     InterpretationBox["Null",
+      Definition["mainbarYMax"],
+      Editable->False]},
+    {"\<\"mainbarYMin\"\>", "mainbarYMin", 
+     InterpretationBox["Null",
+      Definition["mainbarYMin"],
+      Editable->False]},
+    {"\<\"millimeter\"\>", "1", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"millimeter", "=", "1"}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["millimeter"],
+      Editable->False]},
+    {"\<\"mm\"\>", "1", 
+     InterpretationBox[GridBox[{
+        {GridBox[{
+           {
+            RowBox[{"mm", "=", "1"}]}
+          },
+          BaselinePosition->{Baseline, {1, 1}},
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{"Columns" -> {{
+               Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+            "RowsIndexed" -> {}}]}
+       },
+       BaselinePosition->{Baseline, {1, 1}},
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}}],
+      Definition["mm"],
+      Editable->False]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7176234994662857`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pNamePattern", " ", "=", " ", 
+   RowBox[{"\"\<exportableParameters`\>\"", " ", "~~", " ", 
+    RowBox[{"RepeatedNull", "[", 
+     RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Names", "[", "pNamePattern", "]"}], " "}]}], "Input",
+ CellChangeTimes->{{3.7176229432285843`*^9, 3.7176229671178956`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"exportableParameters`pivotShaft`diameter\"\>", 
+   ",", "\<\"exportableParameters`pivotShaft`holeDiameter\"\>", 
+   ",", "\<\"exportableParameters`inch\"\>", 
+   ",", "\<\"exportableParameters`millimeter\"\>", 
+   ",", "\<\"exportableParameters`mm\"\>", 
+   ",", "\<\"exportableParameters`mainBar`pivotInsetY\"\>", 
+   ",", "\<\"exportableParameters`arm`sidePlateYMax\"\>", 
+   ",", "\<\"exportableParameters`mainBar`extent`y\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.717622924486824*^9, 3.7176229678859396`*^9, {3.717623083234812*^9, 
+   3.7176230874331946`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "@", "\"\<exportableParameters`*\>\""}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"There are no symbols matching \
+\\\"\[NoBreak]\\!\\(\\\"exportableParameters`*\\\"\\)\[NoBreak]\\\". \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Remove/rmnsm\\\", \
+ButtonNote -> \\\"Remove::rmnsm\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.717621519230255*^9, 3.7176215213514533`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "@", "\"\<exportableParameters`pivotShaft`*\>\""}]], "Input",
+ CellChangeTimes->{{3.717621493443716*^9, 3.7176215003714137`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"exportableParameters`pivotShaft`diameter\"\>", 
+   ",", "\<\"exportableParameters`pivotShaft`holeDiameter\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.7176205547494187`*^9, 3.7176205804319344`*^9}, 
+   3.717620612728183*^9, 3.717620675574502*^9, {3.717620928561546*^9, 
+   3.71762095553608*^9}, 3.7176211984068837`*^9, 3.7176212326110287`*^9, {
+   3.7176212795894413`*^9, 3.7176213084052134`*^9}, {3.717621360362071*^9, 
+   3.7176213630942864`*^9}, {3.7176214723555965`*^9, 3.7176215223655553`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", 
+  RowBox[{"\"\<exportableParamters`\>\"", " ", "~~", " ", 
+   RowBox[{"RepeatedNull", "[", 
+    RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7176214427178326`*^9, 3.7176214638017445`*^9}, {
+  3.7176215289492846`*^9, 3.71762157948729*^9}, {3.7176216105124707`*^9, 
+  3.7176216110725255`*^9}, {3.7176216636437693`*^9, 3.7176216820916595`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Remove", "@", "\"\<pivotShaft`*\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Remove", "@", "\"\<exportableParameters`pivotShaft`*\>\""}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7176213028206925`*^9, 3.717621349102002*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"There are no symbols matching \
+\\\"\[NoBreak]\\!\\(\\\"pivotShaft`*\\\"\\)\[NoBreak]\\\". \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Remove/rmnsm\\\", \
+ButtonNote -> \\\"Remove::rmnsm\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.7176213496650534`*^9, 3.717621354346463*^9}, {
+  3.7176213939151807`*^9, 3.7176213955214086`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"There are no symbols matching \
+\\\"\[NoBreak]\\!\\(\\\"exportableParameters`pivotShaft`*\\\"\\)\[NoBreak]\\\"\
+. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Remove/rmnsm\\\", \
+ButtonNote -> \\\"Remove::rmnsm\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.7176213496650534`*^9, 3.717621354346463*^9}, {
+  3.7176213939151807`*^9, 3.717621395524398*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{
+   RowBox[{"Names", "[", "]"}], ",", " ", 
+   RowBox[{"x_", "/;", " ", 
+    RowBox[{"StringMatchQ", "[", 
+     RowBox[{"x", ",", 
+      RowBox[{"\"\<exportableParameters`\>\"", " ", "~~", " ", 
+       RowBox[{"RepeatedNull", "[", 
+        RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7176216984572325`*^9, 3.7176217201334743`*^9}, {
+  3.717621762455657*^9, 3.717621813257572*^9}, {3.7176219393103476`*^9, 
+  3.7176219431107717`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"exportableParameters`pivotShaft`diameter\"\>", 
+   ",", "\<\"exportableParameters`pivotShaft`holeDiameter\"\>", 
+   ",", "\<\"exportableParameters`inch\"\>", 
+   ",", "\<\"exportableParameters`millimeter\"\>", 
+   ",", "\<\"exportableParameters`mm\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.717621722303666*^9, 3.7176217651469707`*^9}, 
+   3.717621813790597*^9, {3.71762194051554*^9, 3.7176219437048283`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<exportableParameters`mm\>\"", ",", 
+   RowBox[{"\"\<exportableParamters`\>\"", " ", "~~", " ", 
+    RowBox[{"RepeatedNull", "[", 
+     RowBox[{"__", "~~", " ", "\"\<`\>\""}], "]"}], "~~", " ", "__"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.717621822625387*^9, 3.71762183716982*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.717621837651842*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<exportableParameters`mm\>\"", ",", 
+   RowBox[{"\"\<exportableParamters`\>\"", " ", "~~", " ", "__"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.7176218587307777`*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.7176218593968487`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{
+   RowBox[{"Contexts", "[", "]"}], ",", " ", 
+   RowBox[{"x_", " ", "/;", " ", 
+    RowBox[{"!", 
+     RowBox[{"StringFreeQ", "[", 
+      RowBox[{
+       RowBox[{"ToString", "@", "x"}], ",", "\"\<pivotShaft\>\""}], 
+      "]"}]}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7176209604675303`*^9, 3.717621025610654*^9}, {
+  3.7176210701077957`*^9, 3.7176211259580097`*^9}, {3.7176211632075424`*^9, 
+  3.7176211695761075`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.7176209625477247`*^9, 3.7176209968889556`*^9, {3.717621097629349*^9, 
+   3.7176211264220543`*^9}, {3.7176211642156053`*^9, 3.717621170644208*^9}, 
+   3.7176213986016493`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Contexts", "[", "]"}], "//", "First"}], " ", "//", 
+  "StringQ"}]], "Input",
+ CellChangeTimes->{{3.717621136694086*^9, 3.71762115214254*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.7176211378281326`*^9, 3.717621152542554*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "pivotShaft", "]"}], "[", "diameter", "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.717619608062624*^9, 3.7176196523637476`*^9}}],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{{3.7176196116368923`*^9, 3.7176196534118233`*^9}, 
+   3.717619699891347*^9, 3.7176197478852057`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UpValues", "@", "pivotShaft"}]], "Input",
+ CellChangeTimes->{{3.717619902691738*^9, 3.7176199053500385`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.7176199058050556`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "@", "pivotShaft"}]], "Input",
+ CellChangeTimes->{{3.7176199107665653`*^9, 3.717619911469589*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"pivotShaft", "[", "diameter", "]"}], "]"}], "\[RuleDelayed]", 
+    "5"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"pivotShaft", "[", "holeDiameter", "]"}], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"0.02`", "\[VeryThinSpace]", "+", 
+     RowBox[{"pivotShaft", "[", "diameter", "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.717619911807623*^9, 3.7176199728477497`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.717620251948042*^9, 3.717620261251915*^9}, 
+   3.7176205531832714`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"exportableParameters`inch\"\>", 
+   ",", "\<\"exportableParameters`millimeter\"\>", 
+   ",", "\<\"exportableParameters`mm\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7176202141614575`*^9, {3.717620248697671*^9, 3.7176202619299135`*^9}, 
+   3.717620316471079*^9, 3.71762046099669*^9, {3.717620523782511*^9, 
+   3.717620550015975*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.71762029819232*^9, 3.7176202982433248`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.717620299358429*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Begin", "@", "\"\<exportableParameters`\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Begin", "@", "\"\<exportableParameters`xx`\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7176207123091793`*^9, 3.7176207486627584`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7176207195789084`*^9, 3.7176207206130114`*^9}}],
+
+Cell[BoxData["\<\"exportableParameters`xx`\"\>"], "Output",
+ CellChangeTimes->{3.7176207213000593`*^9, 3.71762075228613*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7176207755904617`*^9, 3.7176207778317537`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{{3.7176207784227624`*^9, 3.7176208092169046`*^9}, {
+   3.717622997630761*^9, 3.717623015466391*^9}, 3.717623068345337*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellChangeTimes->{{3.7176207812880335`*^9, 3.717620782328208*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{{3.7176207825112057`*^9, 3.717620808128729*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"End", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7176207860815153`*^9, 3.71762078656863*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"End", "::", "noctx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"No previous context defined. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/End/noctx\\\", ButtonNote -> \
+\\\"End::noctx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.717623063135848*^9, 3.7176230638089113`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{{3.717620787039677*^9, 3.7176208072566605`*^9}, {
+  3.7176223925980425`*^9, 3.717622393392164*^9}, {3.7176229840544243`*^9, 
+  3.717623018176625*^9}, {3.717623061527725*^9, 3.7176230638109107`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1904, 1011},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4002, 86, 472, "Input"],
+Cell[4584, 110, 7877, 202, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12498, 317, 413, 9, 52, "Input"],
+Cell[12914, 328, 616, 12, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13567, 345, 101, 2, 31, "Input"],
+Cell[13671, 349, 506, 10, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14214, 364, 161, 2, 31, "Input"],
+Cell[14378, 368, 549, 9, 30, "Output"]
+}, Open  ]],
+Cell[14942, 380, 443, 8, 31, "Input"],
+Cell[CellGroupData[{
+Cell[15410, 392, 280, 7, 52, "Input"],
+Cell[15693, 401, 549, 11, 21, "Message"],
+Cell[16245, 414, 568, 11, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16850, 430, 561, 13, 31, "Input"],
+Cell[17414, 445, 458, 8, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17909, 458, 347, 7, 31, "Input"],
+Cell[18259, 467, 74, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18370, 473, 228, 5, 31, "Input"],
+Cell[18601, 480, 76, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18714, 486, 474, 12, 31, "Input"],
+Cell[19191, 500, 244, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19472, 510, 188, 5, 31, "Input"],
+Cell[19663, 517, 99, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19799, 523, 206, 5, 52, "Input"],
+Cell[20008, 530, 148, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20193, 537, 133, 2, 31, "Input"],
+Cell[20329, 541, 89, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20455, 548, 135, 2, 31, "Input"],
+Cell[20593, 552, 499, 13, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21129, 570, 120, 2, 31, "Input"],
+Cell[21252, 574, 383, 8, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21672, 587, 122, 2, 31, "Input"],
+Cell[21797, 591, 84, 1, 30, "Output"]
+}, Open  ]],
+Cell[21896, 595, 277, 6, 52, "Input"],
+Cell[CellGroupData[{
+Cell[22198, 605, 125, 2, 31, "Input"],
+Cell[22326, 609, 124, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22487, 615, 125, 2, 31, "Input"],
+Cell[22615, 619, 184, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22836, 626, 102, 1, 31, "Input"],
+Cell[22941, 629, 110, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23088, 635, 118, 2, 31, "Input"],
+Cell[23209, 639, 425, 9, 21, "Message"],
+Cell[23637, 650, 260, 3, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

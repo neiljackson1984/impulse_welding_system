@@ -5,6 +5,11 @@
     "mm": 1,
     "degree": 1,
     "radian": 57.295779513082,
+    "pivotShaft": {
+        "diameter": 5,
+        "holeDiameter": 5.02,
+        "length": 46
+    },
     "heaterBed": {
         "extent": {
             "x": 30,
@@ -19,11 +24,15 @@
         },
         "foot": {
             "extent": {
-                "y": 15
+                "y": 14
             }
         },
         "pivotInsetZ": 30,
-        "pivotInsetY": 7
+        "pivotInsetY": 7,
+        "springAnchorOffset": 14,
+        "springAnchorHole": {
+            "diameter": 2
+        }
     },
     "arm": {
         "pivotAxisRootPoint": {
@@ -36,15 +45,15 @@
         "sidePlate": {
             "extent": {
                 "x": 3,
-                "y": 47,
+                "y": 49,
                 "z": 14
             },
-            "pivotDedendum": 4
+            "pivotDedendum": 6
         },
-        "sidePlateYMin": -4,
+        "sidePlateYMin": -6,
         "sidePlateYMax": 43,
         "sidePlatePosition": {
-            "y": 19.5,
+            "y": 18.5,
             "z": 2
         },
         "endBlock": {
@@ -52,14 +61,14 @@
             "extent": {
                 "z": 9,
                 "x": 30,
-                "y": 29
+                "y": 31.19125
             }
         },
         "endBlockZMin": 0,
         "endBlockZMax": 9,
         "endBlockPosition": {
             "z": 4.5,
-            "y": 28.5
+            "y": 27.404375
         },
         "sidePlateZMax": 9,
         "sidePlateZMin": -5,
@@ -72,7 +81,8 @@
             "clampingDiameter": 10,
             "length": 14,
             "threadEmbedmentDiameter": 6.9825,
-            "threadSpec": "M5-0.8"
+            "threadSpec": "M5-0.8",
+            "majorDiameter": 5
         },
         "viseClampingZone": {
             "extent": {
@@ -102,13 +112,13 @@
             "clampingDiameter": 20.32,
             "length": 10,
             "threadEmbedmentDiameter": 6.9825,
-            "threadSpec": "M5-0.8"
+            "threadSpec": "M5-0.8",
+            "majorDiameter": 5
         },
         "terminalClampingDiameter": 14,
         "terminalScrewPosition": {
             "y": 21
         },
-        "endBlockYMin": 14,
         "endBlockToSidePlateBindingScrew": {
             "pitch": 0.5,
             "tappableHoleDiameter": 2.5,
@@ -117,19 +127,23 @@
             "clampingDiameter": 8.4,
             "length": null,
             "threadEmbedmentDiameter": 4.1895,
-            "threadSpec": "M3-0.5"
+            "threadSpec": "M3-0.5",
+            "majorDiameter": 3
         },
         "endBlockToSidePlateBindingScrews": {
-            "pattern": {
-                "spanY": 20.6,
-                "countY": 2,
-                "intervalY": 20.6
-            }
+            "positions": [
+                {
+                    "y": 16.00875
+                },
+                {
+                    "y": 38.8
+                }
+            ]
+        },
+        "endBlockYMin": 11.80875,
+        "springAnchorOffset": 14,
+        "springAnchorHole": {
+            "diameter": 2
         }
-    },
-    "pivotShaft": {
-        "diameter": 5,
-        "holeDiameter": 5.02,
-        "length": 46
     }
 }
